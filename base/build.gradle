@@ -3,17 +3,16 @@ apply plugin: "kotlin-android"
 apply plugin: "kotlin-kapt"
 
 android {
-    compileSdkVersion(appTargetSdk)
-    buildToolsVersion(appBuildTool)
+    compileSdkVersion appTargetSdk
+    buildToolsVersion appBuildTool
     defaultConfig {
-        minSdkVersion(appMinSdk)
-        targetSdkVersion(appTargetSdk)
-        versionCode(buildTime())
-        versionName(appVersionName)
-        ndk { abiFilters(ndkLibs) }
+        minSdkVersion appMinSdk
+        targetSdkVersion appTargetSdk
+        versionCode buildTime()
+        versionName appVersionName
         vectorDrawables.useSupportLibrary = true
         multiDexEnabled = true
-        versionNameSuffix(suffix["base"])
+        versionNameSuffix suffix["base"]
     }
 
     buildFeatures {
@@ -21,9 +20,8 @@ android {
         viewBinding = true
     }
     compileOptions {
-        coreLibraryDesugaringEnabled = true
-        sourceCompatibility(JavaVersion.VERSION_1_8)
-        targetCompatibility(JavaVersion.VERSION_1_8)
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
     }
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_1_8
@@ -33,52 +31,51 @@ android {
 dependencies {
     api(fileTree(dir: libPath, include: libTypes))
     // official
-    coreLibraryDesugaring(libs["desugar"])
-    api(libs["kotlin"])
-    api(libs["core"])
-    api(libs["appCompat"])
-    api(libs["annotation"])
-    api(libs["multiDex"])
-    api(libs["fragment"])
-    api(libs["legacySupport"])
-    api(libs["preference"])
-    api(libs["palette"])
-    api(libs["constraintLayout"])
-    api(libs["material"])
-    api(libs["recyclerView"])
-    api(libs["cardView"])
-    api(libs["lifecycle"])
-    api(libs["navigation"])
+    api libs["kotlin"]
+    api libs["core"]
+    api libs["appCompat"]
+    api libs["annotation"]
+    api libs["multiDex"]
+    api libs["fragment"]
+    api libs["legacySupport"]
+    api libs["preference"]
+    api libs["palette"]
+    api libs["constraintLayout"]
+    api libs["material"]
+    api libs["recyclerView"]
+    api libs["cardView"]
+    api libs["lifecycle"]
+    api libs["navigation"]
 
     // UI
-    api(libs["smartRefreshLayout"])
-    api(libs["mpChart"])
-    api(libs["lottie"])
-    api(libs["flycoTabLayout"])
-    api(libs["baseRvHelper"])
+    api libs["smartRefreshLayout"]
+    api libs["mpChart"]
+    api libs["lottie"]
+    api libs["flycoTabLayout"]
+    api libs["baseRvHelper"]
 
     // network
-    api(libs["tbs"])
-    api(libs["okHttp"])
-    api(libs["retrofit"])
-    api(libs["glide"])
-    kapt(libs["glideKapt"])
+    api libs["tbs"]
+    api libs["okHttp"]
+    api libs["retrofit"]
+    api libs["glide"]
+    kapt libs["glideKapt"]
 
     // trans
-    api(libs["objectBox"])
-    api(libs["mmkv"])
-    api(libs["fastjson"])
-    api(libs["gson"])
+    api libs["objectBox"]
+    api libs["mmkv"]
+    api libs["fastjson"]
+    api libs["gson"]
 
     // async
-    api(libs["eventBus"])
-    kapt(libs["eventBusKapt"])
-    api(libs["liveDataBus"])
-    api(libs["rx"])
+    api libs["eventBus"]
+    kapt libs["eventBusKapt"]
+    api libs["liveDataBus"]
+    api libs["rx"]
 
     // utils
-    api(libs["luban"])
+    api libs["luban"]
 
     // analyze
-    debugApi(libs["leakCanary"])
+    debugApi libs["leakCanary"]
 }

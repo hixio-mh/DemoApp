@@ -3,18 +3,18 @@ apply plugin: "kotlin-android"
 apply plugin: "kotlin-kapt"
 
 android {
-    resourcePrefix(prefix["app"])
-    compileSdkVersion(appTargetSdk)
-    buildToolsVersion(appBuildTool)
+    resourcePrefix prefix["app"]
+    compileSdkVersion appTargetSdk
+    buildToolsVersion appBuildTool
     defaultConfig {
-        applicationId(appPackageName)
-        minSdkVersion(appMinSdk)
-        targetSdkVersion(appTargetSdk)
-        versionCode(buildTime())
-        versionName(appVersionName)
-        ndk { abiFilters(ndkLibs) }
+        applicationId appPackageName
+        minSdkVersion appMinSdk
+        targetSdkVersion appTargetSdk
+        versionCode buildTime()
+        versionName appVersionName
         vectorDrawables.useSupportLibrary = true
-        versionNameSuffix(suffix["app"])
+        versionNameSuffix suffix["app"]
+        ndk { abiFilters(ndkLibs) }
     }
     signingConfigs {
         sign {
@@ -62,11 +62,12 @@ android {
     }
     lintOptions {
         abortOnError = false
-        checkReleaseBuilds false
+        checkReleaseBuilds = false
     }
     compileOptions {
-        sourceCompatibility(JavaVersion.VERSION_1_8)
-        targetCompatibility(JavaVersion.VERSION_1_8)
+        coreLibraryDesugaringEnabled = true
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
     }
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_1_8
@@ -80,10 +81,13 @@ kapt {
 }
 
 dependencies {
+    coreLibraryDesugaring libs["desugar"]
+
     implementation project(commonModule)
     implementation project(loginModule)
     implementation project(mainModule)
     implementation project(webModule)
 
-    kapt(libs["arouterKapt"])
+    kapt libs["arouterKapt"]
+    kapt libs["objectBoxKapt"]
 }
