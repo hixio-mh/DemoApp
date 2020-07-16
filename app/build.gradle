@@ -62,7 +62,7 @@ android {
     }
     lintOptions {
         abortOnError = false
-        checkReleaseBuilds false
+        checkReleaseBuilds = false
     }
     compileOptions {
         coreLibraryDesugaringEnabled = true
