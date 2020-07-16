@@ -7,4 +7,9 @@ ext {
     cleanFileTypes = [
             "*.log", "*.txt"
     ]
+
+    SIGN_KEY_ALIAS = "key0"
+    SIGN_KEY_PASSWORD = "demo.app"
+    SIGN_STORE_FILE = "${rootDir.path}/gradle/demo.jks"
+    SIGN_STORE_PASSWORD = "demo.app"
 }

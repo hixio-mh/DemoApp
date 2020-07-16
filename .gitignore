@@ -13,7 +13,6 @@ maven-repository
 mvn-clone
 build
 captures
-objectbox-models
 gen
 out
 target
