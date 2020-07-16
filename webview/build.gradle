@@ -3,17 +3,16 @@ apply plugin: "kotlin-android"
 apply plugin: "kotlin-kapt"
 
 android {
-    resourcePrefix(prefix["web"])
-    compileSdkVersion(appTargetSdk)
-    buildToolsVersion(appBuildTool)
+    resourcePrefix prefix["web"]
+    compileSdkVersion appTargetSdk
+    buildToolsVersion appBuildTool
     defaultConfig {
-        minSdkVersion(appMinSdk)
-        targetSdkVersion(appTargetSdk)
-        versionCode(buildTime())
-        versionName(appVersionName)
-        ndk { abiFilters(ndkLibs) }
+        minSdkVersion appMinSdk
+        targetSdkVersion appTargetSdk
+        versionCode buildTime()
+        versionName appVersionName
         vectorDrawables.useSupportLibrary = true
-        versionNameSuffix(suffix["web"])
+        versionNameSuffix suffix["web"]
     }
     flavorDimensions "channel"
     productFlavors {
@@ -25,8 +24,8 @@ android {
         viewBinding = true
     }
     compileOptions {
-        sourceCompatibility(JavaVersion.VERSION_1_8)
-        targetCompatibility(JavaVersion.VERSION_1_8)
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
     }
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_1_8
