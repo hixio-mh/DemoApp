@@ -4,7 +4,7 @@ apply plugin: "kotlin-kapt"
 apply plugin: "com.google.protobuf"
 
 android {
-    resourcePrefix prefix["main"]
+    resourcePrefix prefix.main
     compileSdkVersion appTargetSdk
     buildToolsVersion appBuildTool
     defaultConfig {
@@ -13,7 +13,7 @@ android {
         versionCode buildTime()
         versionName appVersionName
         vectorDrawables.useSupportLibrary = true
-        versionNameSuffix suffix["main"]
+        versionNameSuffix suffix.main
     }
     flavorDimensions "channel"
     productFlavors {
@@ -51,7 +51,7 @@ kapt {
 
 protobuf {
     protoc {
-        artifact = libs["protoc"]
+        artifact = libs.protoc
     }
     generateProtoTasks {
         all().each { task ->
@@ -68,9 +68,9 @@ dependencies {
     implementation project(commonModule)
     implementation project(adapterModule)
 
-    implementation(libs["protobufLite"])
-    implementation(libs["moshi"])
+    implementation libs.protobufLite
+    implementation libs.moshi
 
-    kapt(libs["arouterKapt"])
-    kapt(libs["objectBoxKapt"])
+    kapt libs.arouterKapt
+    kapt libs.objectBoxKapt
 }

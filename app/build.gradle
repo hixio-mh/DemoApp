@@ -3,7 +3,7 @@ apply plugin: "kotlin-android"
 apply plugin: "kotlin-kapt"
 
 android {
-    resourcePrefix prefix["app"]
+    resourcePrefix prefix.app
     compileSdkVersion appTargetSdk
     buildToolsVersion appBuildTool
     defaultConfig {
@@ -13,7 +13,6 @@ android {
         versionCode buildTime()
         versionName appVersionName
         vectorDrawables.useSupportLibrary = true
-        versionNameSuffix suffix["app"]
         ndk { abiFilters(ndkLibs) }
     }
     signingConfigs {
@@ -45,13 +44,13 @@ android {
         daily {}
         online {}
     }
-    /*applicationVariants.all { variant ->
+    applicationVariants.all { variant ->
         variant.outputs.all { output ->
             if (output.outputFile != null && output.outputFile.name.endsWith('.apk')) {
-                outputFileName = "Demo_${buildTime()}.apk"
+                outputFileName = "Demo_${variant.versionName}_${variant.versionCode}_${flavorName}_${variant.buildType.name}.apk"
             }
         }
-    }*/
+    }
     dependenciesInfo {
         includeInApk = false
         includeInBundle = false
@@ -81,13 +80,13 @@ kapt {
 }
 
 dependencies {
-    coreLibraryDesugaring libs["desugar"]
+    coreLibraryDesugaring libs.desugar
 
     implementation project(commonModule)
     implementation project(loginModule)
     implementation project(mainModule)
     implementation project(webModule)
 
-    kapt libs["arouterKapt"]
-    kapt libs["objectBoxKapt"]
+    kapt libs.arouterKapt
+    kapt libs.objectBoxKapt
 }

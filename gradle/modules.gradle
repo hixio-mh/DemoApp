@@ -17,7 +17,6 @@ ext {
     ]
 
     suffix = [
-            app    : "_app",
             base   : "_base",
             common : "_common",
             login  : "_login",

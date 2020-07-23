@@ -146,7 +146,6 @@ ext {
             ],
             retrofit          : [
                     "com.squareup.retrofit2:retrofit:$retrofitVersion",
-                    "com.squareup.retrofit2:adapter-rxjava3:$retrofitVersion",
                     "com.squareup.retrofit2:converter-gson:$retrofitVersion"
             ],
             glide             : [
@@ -161,7 +160,7 @@ ext {
             rx                : [
                     "io.reactivex.rxjava3:rxjava:$rxJavaVersion",
                     "io.reactivex.rxjava3:rxandroid:$rxAndroidVersion",
-                    "io.reactivex.rxjava3:rxkotlin:$rxAndroidVersion"
+                    "com.squareup.retrofit2:adapter-rxjava3:$retrofitVersion"
             ]
     ]
 }

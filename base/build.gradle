@@ -12,7 +12,7 @@ android {
         versionName appVersionName
         vectorDrawables.useSupportLibrary = true
         multiDexEnabled = true
-        versionNameSuffix suffix["base"]
+        versionNameSuffix suffix.base
     }
 
     buildFeatures {
@@ -31,51 +31,51 @@ android {
 dependencies {
     api(fileTree(dir: libPath, include: libTypes))
     // official
-    api libs["kotlin"]
-    api libs["core"]
-    api libs["appCompat"]
-    api libs["annotation"]
-    api libs["multiDex"]
-    api libs["fragment"]
-    api libs["legacySupport"]
-    api libs["preference"]
-    api libs["palette"]
-    api libs["constraintLayout"]
-    api libs["material"]
-    api libs["recyclerView"]
-    api libs["cardView"]
-    api libs["lifecycle"]
-    api libs["navigation"]
+    api libs.kotlin
+    api libs.core
+    api libs.appCompat
+    api libs.annotation
+    api libs.multiDex
+    api libs.fragment
+    api libs.legacySupport
+    api libs.preference
+    api libs.palette
+    api libs.constraintLayout
+    api libs.material
+    api libs.recyclerView
+    api libs.cardView
+    api libs.lifecycle
+    api libs.navigation
 
     // UI
-    api libs["smartRefreshLayout"]
-    api libs["mpChart"]
-    api libs["lottie"]
-    api libs["flycoTabLayout"]
-    api libs["baseRvHelper"]
+    api libs.smartRefreshLayout
+    api libs.mpChart
+    api libs.lottie
+    api libs.flycoTabLayout
+    api libs.baseRvHelper
 
     // network
-    api libs["tbs"]
-    api libs["okHttp"]
-    api libs["retrofit"]
-    api libs["glide"]
-    kapt libs["glideKapt"]
+    api libs.tbs
+    api libs.okHttp
+    api libs.retrofit
+    api libs.glide
+    kapt libs.glideKapt
 
     // trans
-    api libs["objectBox"]
-    api libs["mmkv"]
-    api libs["fastjson"]
-    api libs["gson"]
+    api libs.objectBox
+    api libs.mmkv
+    api libs.fastjson
+    api libs.gson
 
     // async
-    api libs["eventBus"]
-    kapt libs["eventBusKapt"]
-    api libs["liveDataBus"]
-    api libs["rx"]
+    api libs.eventBus
+    kapt libs.eventBusKapt
+    api libs.liveDataBus
+    api libs.rx
 
     // utils
-    api libs["luban"]
+    api libs.luban
 
     // analyze
-    debugApi libs["leakCanary"]
+    debugApi libs.leakCanary
 }

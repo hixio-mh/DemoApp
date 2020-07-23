@@ -3,7 +3,7 @@ apply plugin: "kotlin-android"
 apply plugin: "kotlin-kapt"
 
 android {
-    resourcePrefix prefix["adapter"]
+    resourcePrefix prefix.adapter
     compileSdkVersion appTargetSdk
     buildToolsVersion appBuildTool
     defaultConfig {
@@ -12,7 +12,7 @@ android {
         versionCode buildTime()
         versionName appVersionName
         vectorDrawables.useSupportLibrary = true
-        versionNameSuffix suffix["adapter"]
+        versionNameSuffix suffix.adapter
     }
     buildFeatures {
         dataBinding = true

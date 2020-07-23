@@ -3,7 +3,7 @@ apply plugin: "kotlin-android"
 apply plugin: "kotlin-kapt"
 
 android {
-    resourcePrefix prefix["common"]
+    resourcePrefix prefix.common
     compileSdkVersion appTargetSdk
     buildToolsVersion appBuildTool
     defaultConfig {
@@ -11,7 +11,7 @@ android {
         targetSdkVersion appTargetSdk
         versionCode buildTime()
         versionName appVersionName
-        versionNameSuffix suffix["common"]
+        versionNameSuffix suffix.common
     }
     flavorDimensions "channel"
     productFlavors {
@@ -50,6 +50,6 @@ kapt {
 dependencies {
     api fileTree(dir: libPath, include: libTypes)
     api project(baseModule)
-    api libs["arouter"]
-    kapt libs["arouterKapt"]
+    api libs.arouter
+    kapt libs.arouterKapt
 }
