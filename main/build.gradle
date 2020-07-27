@@ -22,14 +22,6 @@ android {
     }
     buildFeatures {
         dataBinding = true
-        viewBinding = true
-    }
-    sourceSets {
-        main {
-            proto {
-                srcDir "src/main/proto"
-            }
-        }
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
