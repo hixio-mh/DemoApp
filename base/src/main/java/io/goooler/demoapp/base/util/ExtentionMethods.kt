@@ -9,7 +9,6 @@ import android.text.Spanned
 import android.view.View
 import android.webkit.URLUtil
 import androidx.annotation.ColorInt
-import androidx.annotation.StringRes
 import io.goooler.demoapp.base.BuildConfig
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.core.Single
@@ -23,13 +22,11 @@ import kotlin.math.absoluteValue
 
 val isDebug: Boolean = BuildConfig.DEBUG
 
-const val versionCode: Int = BuildConfig.VERSION_CODE
+val currentTimeMillis: Long get() = System.currentTimeMillis()
 
-val currentTimeMillis: Long = System.currentTimeMillis()
+val currentThreadName: String get() = Thread.currentThread().name
 
-val currentThreadName: String = Thread.currentThread().name
-
-val isMainThread = Looper.getMainLooper().thread === Thread.currentThread()
+val isMainThread get() = Looper.getMainLooper().thread === Thread.currentThread()
 
 fun <T> unsafeLazy(initializer: () -> T) = lazy(LazyThreadSafetyMode.NONE, initializer)
 
@@ -44,10 +41,6 @@ fun String.fromHtml(): Spanned {
         @Suppress("DEPRECATION")
         Html.fromHtml(this)
     }
-}
-
-fun String.formatRes(@StringRes resId: Int): String {
-    return String.format(ResUtil.getString(resId), this)
 }
 
 fun CharSequence?.isNotNullOrEmpty(): Boolean {

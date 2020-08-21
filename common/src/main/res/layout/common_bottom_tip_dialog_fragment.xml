@@ -5,7 +5,8 @@
     tools:ignore="ContentDescription">
 
     <data>
-        <variable
+
+    <variable
             name="listener"
             type="io.goooler.demoapp.common.ui.BottomTipDialogFragment.EventListener" />
     </data>

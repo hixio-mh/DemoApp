@@ -12,7 +12,7 @@ android {
         targetSdkVersion appTargetSdk
         versionCode buildTime()
         versionName appVersionName
-        vectorDrawables.useSupportLibrary = true
+        vectorDrawables.useSupportLibrary true
         ndk { abiFilters(ndkLibs) }
     }
     signingConfigs {
@@ -25,24 +25,24 @@ android {
     }
     buildTypes {
         release {
-            signingConfig = signingConfigs.sign
-            minifyEnabled = true
-            zipAlignEnabled = true
-            shrinkResources = true
+            signingConfig signingConfigs.sign
+            minifyEnabled true
+            zipAlignEnabled true
+            shrinkResources true
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
         debug {
-            signingConfig = signingConfigs.sign
-            jniDebuggable = true
-            renderscriptDebuggable = true
-            crunchPngs = false
+            signingConfig signingConfigs.sign
+            jniDebuggable true
+            renderscriptDebuggable true
+            crunchPngs false
             ext.alwaysUpdateBuildId = false
         }
     }
     flavorDimensions "channel"
     productFlavors {
-        daily {}
-        online {}
+        daily
+        online
     }
     applicationVariants.all { variant ->
         variant.outputs.all { output ->
@@ -52,20 +52,20 @@ android {
         }
     }
     dependenciesInfo {
-        includeInApk = false
-        includeInBundle = false
+        includeInApk false
+        includeInBundle false
     }
     buildFeatures {
-        dataBinding = true
+        dataBinding true
     }
     lintOptions {
-        abortOnError = false
-        checkReleaseBuilds = false
+        abortOnError false
+        checkReleaseBuilds false
     }
     compileOptions {
-        coreLibraryDesugaringEnabled = true
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        coreLibraryDesugaringEnabled true
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_1_8

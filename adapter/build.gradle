@@ -11,15 +11,15 @@ android {
         targetSdkVersion appTargetSdk
         versionCode buildTime()
         versionName appVersionName
-        vectorDrawables.useSupportLibrary = true
+        vectorDrawables.useSupportLibrary true
         versionNameSuffix suffix.adapter
     }
     buildFeatures {
-        dataBinding = true
+        dataBinding true
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_1_8
