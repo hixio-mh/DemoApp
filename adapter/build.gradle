@@ -14,9 +14,6 @@ android {
         vectorDrawables.useSupportLibrary true
         versionNameSuffix suffix.adapter
     }
-    buildFeatures {
-        dataBinding true
-    }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8

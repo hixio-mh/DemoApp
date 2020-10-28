@@ -55,9 +55,6 @@ android {
         includeInApk false
         includeInBundle false
     }
-    buildFeatures {
-        dataBinding true
-    }
     lintOptions {
         abortOnError false
         checkReleaseBuilds false

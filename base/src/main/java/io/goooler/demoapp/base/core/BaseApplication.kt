@@ -1,7 +1,7 @@
 package io.goooler.demoapp.base.core
 
 import android.annotation.SuppressLint
-import androidx.multidex.MultiDexApplication
+import android.app.Application
 import com.tencent.mmkv.MMKV
 import io.goooler.demoapp.base.util.CrashHandler
 import kotlinx.coroutines.Dispatchers
@@ -12,7 +12,7 @@ import kotlinx.coroutines.launch
 /**
  * 封装通用方法和一些初始化的动作
  */
-abstract class BaseApplication : MultiDexApplication() {
+abstract class BaseApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
