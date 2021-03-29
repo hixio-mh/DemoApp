@@ -1,4 +1,4 @@
-package io.goooler.demoapp.base.util
+package io.goooler.demoapp.common.util
 
 import io.goooler.demoapp.base.type.EventType
 import org.greenrobot.eventbus.EventBus

@@ -15,6 +15,9 @@ kapt {
 }
 
 dependencies {
+    implementation libs.eventBus
+    kapt libs.eventBusKapt
+
     implementation libs.arouter
     kapt libs.arouterKapt
 }

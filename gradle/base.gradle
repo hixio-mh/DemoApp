@@ -23,4 +23,41 @@ android {
 
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar", "*.aar"])
+
+    // official
+    implementation libs.coroutines
+    implementation libs.core
+    implementation libs.appCompat
+    implementation libs.annotation
+    implementation libs.fragment
+    implementation libs.legacySupport
+    implementation libs.preference
+    implementation libs.palette
+    implementation libs.constraintLayout
+    implementation libs.material
+    implementation libs.recyclerView
+    implementation libs.cardView
+    implementation libs.lifecycle
+    implementation libs.navigation
+
+    // UI
+    implementation libs.smartRefreshLayout
+    implementation libs.mpChart
+    implementation libs.lottie
+    implementation libs.flycoTabLayout
+    implementation libs.baseRvHelper
+
+    // network
+    implementation libs.tbs
+    implementation libs.okHttp
+    implementation libs.retrofit
+    implementation libs.glide
+
+    // trans
+    implementation libs.objectBox
+    implementation libs.fastjson
+    implementation libs.gson
+
+    // async
+    implementation libs.rx
 }

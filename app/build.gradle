@@ -53,5 +53,7 @@ dependencies {
     implementation project(mainModule)
     implementation project(webModule)
 
+    debugImplementation libs.leakCanary
+
     kapt libs.objectBoxKapt
 }

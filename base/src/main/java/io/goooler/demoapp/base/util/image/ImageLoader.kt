@@ -6,11 +6,11 @@ import android.graphics.drawable.Drawable
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.annotation.DrawableRes
+import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.bumptech.glide.request.RequestOptions
-import io.goooler.demoapp.base.util.image.glide.GlideApp
 import jp.wasabeef.glide.transformations.BlurTransformation
 
 /**
@@ -28,7 +28,7 @@ import jp.wasabeef.glide.transformations.BlurTransformation
  * http://cdn.xxx.com/assets/file/11/24/n_1543045056389_4585.jpg?x-oss-process=image/resize,h_340
  *
  *
- * 在调用GlideApp 的 centerCrop()，centerInside()等方法时，如果同时也设置了 ImageView 的 ScaleType 属性，那么 ImageView
+ * 在调用Glide 的 centerCrop()，centerInside()等方法时，如果同时也设置了 ImageView 的 ScaleType 属性，那么 ImageView
  * 的 ScaleType 将会被忽略。
  *
  *
@@ -56,7 +56,7 @@ object ImageLoader {
         imageView: ImageView,
         url: String?
     ) {
-        GlideApp.with(imageView)
+        Glide.with(imageView)
             .load(url)
             .into(imageView)
     }
@@ -73,7 +73,7 @@ object ImageLoader {
         url: String?,
         @DrawableRes placeholderId: Int
     ) {
-        GlideApp.with(imageView)
+        Glide.with(imageView)
             .load(url)
             .placeholder(placeholderId)
             .into(imageView)
@@ -91,7 +91,7 @@ object ImageLoader {
         url: String?,
         placeholderDrawable: Drawable?
     ) {
-        GlideApp.with(imageView)
+        Glide.with(imageView)
             .load(url)
             .placeholder(placeholderDrawable)
             .into(imageView)
@@ -111,7 +111,7 @@ object ImageLoader {
         placeholderDrawable: Drawable?,
         errorDrawable: Drawable?
     ) {
-        GlideApp.with(imageView)
+        Glide.with(imageView)
             .load(url)
             .placeholder(placeholderDrawable)
             .error(errorDrawable)
@@ -130,7 +130,7 @@ object ImageLoader {
         bitmap: Bitmap?,
         @DrawableRes placeholderId: Int
     ) {
-        GlideApp.with(imageView)
+        Glide.with(imageView)
             .load(bitmap)
             .diskCacheStrategy(DiskCacheStrategy.ALL)
             .placeholder(placeholderId)
@@ -149,7 +149,7 @@ object ImageLoader {
         bitmap: Bitmap?,
         placeholderDrawable: Drawable?
     ) {
-        GlideApp.with(imageView)
+        Glide.with(imageView)
             .load(bitmap)
             .diskCacheStrategy(DiskCacheStrategy.ALL)
             .placeholder(placeholderDrawable)
@@ -170,7 +170,7 @@ object ImageLoader {
         placeholderDrawable: Drawable?,
         errorDrawable: Drawable?
     ) {
-        GlideApp.with(imageView)
+        Glide.with(imageView)
             .load(bitmap)
             .diskCacheStrategy(DiskCacheStrategy.ALL)
             .placeholder(placeholderDrawable)
@@ -188,9 +188,9 @@ object ImageLoader {
         imageView: ImageView,
         url: String?
     ) {
-        GlideApp.with(imageView)
+        Glide.with(imageView)
             .load(translateOssUrl(imageView, url))
-            .error(GlideApp.with(imageView).load(url))
+            .error(Glide.with(imageView).load(url))
             .into(imageView)
     }
 
@@ -206,10 +206,10 @@ object ImageLoader {
         url: String?,
         @DrawableRes placeholderId: Int
     ) {
-        GlideApp.with(imageView)
+        Glide.with(imageView)
             .load(translateOssUrl(imageView, url))
             .placeholder(placeholderId)
-            .error(GlideApp.with(imageView).load(url))
+            .error(Glide.with(imageView).load(url))
             .into(imageView)
     }
 
@@ -225,10 +225,10 @@ object ImageLoader {
         url: String?,
         placeholderDrawable: Drawable?
     ) {
-        GlideApp.with(imageView)
+        Glide.with(imageView)
             .load(translateOssUrl(imageView, url))
             .placeholder(placeholderDrawable)
-            .error(GlideApp.with(imageView).load(url))
+            .error(Glide.with(imageView).load(url))
             .into(imageView)
     }
 
@@ -246,10 +246,10 @@ object ImageLoader {
         placeholderDrawable: Drawable?,
         errorDrawable: Drawable?
     ) {
-        GlideApp.with(imageView)
+        Glide.with(imageView)
             .load(translateOssUrl(imageView, url))
             .placeholder(placeholderDrawable)
-            .error(GlideApp.with(imageView).load(url).error(errorDrawable))
+            .error(Glide.with(imageView).load(url).error(errorDrawable))
             .into(imageView)
     }
 
@@ -263,7 +263,7 @@ object ImageLoader {
         imageView: ImageView,
         url: String?
     ) {
-        GlideApp.with(imageView)
+        Glide.with(imageView)
             .load(url)
             .centerCrop()
             .into(imageView)
@@ -281,7 +281,7 @@ object ImageLoader {
         url: String?,
         @DrawableRes placeholderId: Int
     ) {
-        GlideApp.with(imageView)
+        Glide.with(imageView)
             .load(url)
             .placeholder(placeholderId)
             .centerCrop()
@@ -300,7 +300,7 @@ object ImageLoader {
         url: String?,
         placeholderDrawable: Drawable?
     ) {
-        GlideApp.with(imageView)
+        Glide.with(imageView)
             .load(url)
             .placeholder(placeholderDrawable)
             .centerCrop()
@@ -321,7 +321,7 @@ object ImageLoader {
         placeholderDrawable: Drawable?,
         errorDrawable: Drawable?
     ) {
-        GlideApp.with(imageView)
+        Glide.with(imageView)
             .load(url)
             .placeholder(placeholderDrawable)
             .error(errorDrawable)
@@ -339,10 +339,10 @@ object ImageLoader {
         imageView: ImageView,
         url: String?
     ) {
-        GlideApp.with(imageView)
+        Glide.with(imageView)
             .load(translateOssUrl(imageView, url))
             .centerCrop()
-            .error(GlideApp.with(imageView).load(url))
+            .error(Glide.with(imageView).load(url))
             .into(imageView)
     }
 
@@ -358,11 +358,11 @@ object ImageLoader {
         url: String?,
         @DrawableRes placeholderId: Int
     ) {
-        GlideApp.with(imageView)
+        Glide.with(imageView)
             .load(translateOssUrl(imageView, url))
             .placeholder(placeholderId)
             .centerCrop()
-            .error(GlideApp.with(imageView).load(url))
+            .error(Glide.with(imageView).load(url))
             .into(imageView)
     }
 
@@ -378,11 +378,11 @@ object ImageLoader {
         url: String?,
         placeholderDrawable: Drawable?
     ) {
-        GlideApp.with(imageView)
+        Glide.with(imageView)
             .load(translateOssUrl(imageView, url))
             .placeholder(placeholderDrawable)
             .centerCrop()
-            .error(GlideApp.with(imageView).load(url))
+            .error(Glide.with(imageView).load(url))
             .into(imageView)
     }
 
@@ -400,11 +400,11 @@ object ImageLoader {
         placeholderDrawable: Drawable?,
         errorDrawable: Drawable?
     ) {
-        GlideApp.with(imageView)
+        Glide.with(imageView)
             .load(translateOssUrl(imageView, url))
             .placeholder(placeholderDrawable)
             .centerCrop()
-            .error(GlideApp.with(imageView).load(url).error(errorDrawable))
+            .error(Glide.with(imageView).load(url).error(errorDrawable))
             .into(imageView)
     }
 
@@ -418,7 +418,7 @@ object ImageLoader {
         imageView: ImageView,
         url: String?
     ) {
-        GlideApp.with(imageView)
+        Glide.with(imageView)
             .load(url)
             .centerInside()
             .into(imageView)
@@ -436,7 +436,7 @@ object ImageLoader {
         url: String?,
         @DrawableRes placeholderId: Int
     ) {
-        GlideApp.with(imageView)
+        Glide.with(imageView)
             .load(url)
             .placeholder(placeholderId)
             .centerInside()
@@ -455,7 +455,7 @@ object ImageLoader {
         url: String?,
         placeholderDrawable: Drawable?
     ) {
-        GlideApp.with(imageView)
+        Glide.with(imageView)
             .load(url)
             .placeholder(placeholderDrawable)
             .centerInside()
@@ -476,7 +476,7 @@ object ImageLoader {
         placeholderDrawable: Drawable?,
         errorDrawable: Drawable?
     ) {
-        GlideApp.with(imageView)
+        Glide.with(imageView)
             .load(url)
             .placeholder(placeholderDrawable)
             .error(errorDrawable)
@@ -494,10 +494,10 @@ object ImageLoader {
         imageView: ImageView,
         url: String?
     ) {
-        GlideApp.with(imageView)
+        Glide.with(imageView)
             .load(translateOssUrl(imageView, url))
             .centerInside()
-            .error(GlideApp.with(imageView).load(url))
+            .error(Glide.with(imageView).load(url))
             .into(imageView)
     }
 
@@ -513,11 +513,11 @@ object ImageLoader {
         url: String?,
         @DrawableRes placeholderId: Int
     ) {
-        GlideApp.with(imageView)
+        Glide.with(imageView)
             .load(translateOssUrl(imageView, url))
             .placeholder(placeholderId)
             .centerInside()
-            .error(GlideApp.with(imageView).load(url))
+            .error(Glide.with(imageView).load(url))
             .into(imageView)
     }
 
@@ -533,11 +533,11 @@ object ImageLoader {
         url: String?,
         placeholderDrawable: Drawable?
     ) {
-        GlideApp.with(imageView)
+        Glide.with(imageView)
             .load(translateOssUrl(imageView, url))
             .placeholder(placeholderDrawable)
             .centerInside()
-            .error(GlideApp.with(imageView).load(url))
+            .error(Glide.with(imageView).load(url))
             .into(imageView)
     }
 
@@ -555,11 +555,11 @@ object ImageLoader {
         placeholderDrawable: Drawable?,
         errorDrawable: Drawable?
     ) {
-        GlideApp.with(imageView)
+        Glide.with(imageView)
             .load(translateOssUrl(imageView, url))
             .placeholder(placeholderDrawable)
             .centerInside()
-            .error(GlideApp.with(imageView).load(url).error(errorDrawable))
+            .error(Glide.with(imageView).load(url).error(errorDrawable))
             .into(imageView)
     }
 
@@ -573,7 +573,7 @@ object ImageLoader {
         imageView: ImageView,
         url: String?
     ) {
-        GlideApp.with(imageView)
+        Glide.with(imageView)
             .load(url)
             .fitCenter()
             .into(imageView)
@@ -591,7 +591,7 @@ object ImageLoader {
         url: String?,
         @DrawableRes placeholderId: Int
     ) {
-        GlideApp.with(imageView)
+        Glide.with(imageView)
             .load(url)
             .placeholder(placeholderId)
             .fitCenter()
@@ -610,7 +610,7 @@ object ImageLoader {
         url: String?,
         placeholderDrawable: Drawable?
     ) {
-        GlideApp.with(imageView)
+        Glide.with(imageView)
             .load(url)
             .placeholder(placeholderDrawable)
             .fitCenter()
@@ -631,7 +631,7 @@ object ImageLoader {
         placeholderDrawable: Drawable?,
         errorDrawable: Drawable?
     ) {
-        GlideApp.with(imageView)
+        Glide.with(imageView)
             .load(url)
             .placeholder(placeholderDrawable)
             .error(errorDrawable)
@@ -649,10 +649,10 @@ object ImageLoader {
         imageView: ImageView,
         url: String?
     ) {
-        GlideApp.with(imageView)
+        Glide.with(imageView)
             .load(translateOssUrl(imageView, url))
             .fitCenter()
-            .error(GlideApp.with(imageView).load(url))
+            .error(Glide.with(imageView).load(url))
             .into(imageView)
     }
 
@@ -668,11 +668,11 @@ object ImageLoader {
         url: String?,
         @DrawableRes placeholderId: Int
     ) {
-        GlideApp.with(imageView)
+        Glide.with(imageView)
             .load(translateOssUrl(imageView, url))
             .placeholder(placeholderId)
             .fitCenter()
-            .error(GlideApp.with(imageView).load(url))
+            .error(Glide.with(imageView).load(url))
             .into(imageView)
     }
 
@@ -688,11 +688,11 @@ object ImageLoader {
         url: String?,
         placeholderDrawable: Drawable?
     ) {
-        GlideApp.with(imageView)
+        Glide.with(imageView)
             .load(translateOssUrl(imageView, url))
             .placeholder(placeholderDrawable)
             .fitCenter()
-            .error(GlideApp.with(imageView).load(url))
+            .error(Glide.with(imageView).load(url))
             .into(imageView)
     }
 
@@ -710,11 +710,11 @@ object ImageLoader {
         placeholderDrawable: Drawable?,
         errorDrawable: Drawable?
     ) {
-        GlideApp.with(imageView)
+        Glide.with(imageView)
             .load(translateOssUrl(imageView, url))
             .placeholder(placeholderDrawable)
             .fitCenter()
-            .error(GlideApp.with(imageView).load(url).error(errorDrawable))
+            .error(Glide.with(imageView).load(url).error(errorDrawable))
             .into(imageView)
     }
 
@@ -728,7 +728,7 @@ object ImageLoader {
         imageView: ImageView,
         url: String?
     ) {
-        GlideApp.with(imageView)
+        Glide.with(imageView)
             .load(url)
             .circleCrop()
             .into(imageView)
@@ -746,7 +746,7 @@ object ImageLoader {
         url: String?,
         @DrawableRes placeholderId: Int
     ) {
-        GlideApp.with(imageView)
+        Glide.with(imageView)
             .load(url)
             .placeholder(placeholderId)
             .circleCrop()
@@ -765,7 +765,7 @@ object ImageLoader {
         url: String?,
         placeholderDrawable: Drawable?
     ) {
-        GlideApp.with(imageView)
+        Glide.with(imageView)
             .load(url)
             .placeholder(placeholderDrawable)
             .circleCrop()
@@ -786,7 +786,7 @@ object ImageLoader {
         placeholderDrawable: Drawable?,
         errorDrawable: Drawable?
     ) {
-        GlideApp.with(imageView)
+        Glide.with(imageView)
             .load(url)
             .placeholder(placeholderDrawable)
             .error(errorDrawable)
@@ -804,10 +804,10 @@ object ImageLoader {
         imageView: ImageView,
         url: String?
     ) {
-        GlideApp.with(imageView)
+        Glide.with(imageView)
             .load(translateOssUrl(imageView, url))
             .circleCrop()
-            .error(GlideApp.with(imageView).load(url))
+            .error(Glide.with(imageView).load(url))
             .into(imageView)
     }
 
@@ -823,11 +823,11 @@ object ImageLoader {
         url: String?,
         @DrawableRes placeholderId: Int
     ) {
-        GlideApp.with(imageView)
+        Glide.with(imageView)
             .load(translateOssUrl(imageView, url))
             .placeholder(placeholderId)
             .circleCrop()
-            .error(GlideApp.with(imageView).load(url))
+            .error(Glide.with(imageView).load(url))
             .into(imageView)
     }
 
@@ -843,11 +843,11 @@ object ImageLoader {
         url: String?,
         placeholderDrawable: Drawable?
     ) {
-        GlideApp.with(imageView)
+        Glide.with(imageView)
             .load(translateOssUrl(imageView, url))
             .placeholder(placeholderDrawable)
             .circleCrop()
-            .error(GlideApp.with(imageView).load(url))
+            .error(Glide.with(imageView).load(url))
             .into(imageView)
     }
 
@@ -865,11 +865,11 @@ object ImageLoader {
         placeholderDrawable: Drawable?,
         errorDrawable: Drawable?
     ) {
-        GlideApp.with(imageView)
+        Glide.with(imageView)
             .load(translateOssUrl(imageView, url))
             .placeholder(placeholderDrawable)
             .circleCrop()
-            .error(GlideApp.with(imageView).load(url).error(errorDrawable))
+            .error(Glide.with(imageView).load(url).error(errorDrawable))
             .into(imageView)
     }
 
@@ -884,7 +884,7 @@ object ImageLoader {
         imageView: ImageView,
         url: String?, roundingRadius: Int
     ) {
-        GlideApp.with(imageView)
+        Glide.with(imageView)
             .load(url)
             .apply(RequestOptions.bitmapTransform(RoundedCorners(roundingRadius)))
             .into(imageView)
@@ -904,7 +904,7 @@ object ImageLoader {
         roundingRadius: Int,
         @DrawableRes placeholderId: Int
     ) {
-        GlideApp.with(imageView)
+        Glide.with(imageView)
             .load(url)
             .placeholder(placeholderId)
             .apply(RequestOptions.bitmapTransform(RoundedCorners(roundingRadius)))
@@ -925,7 +925,7 @@ object ImageLoader {
         roundingRadius: Int,
         placeholderDrawable: Drawable?
     ) {
-        GlideApp.with(imageView)
+        Glide.with(imageView)
             .load(url)
             .placeholder(placeholderDrawable)
             .apply(RequestOptions.bitmapTransform(RoundedCorners(roundingRadius)))
@@ -948,7 +948,7 @@ object ImageLoader {
         placeholderDrawable: Drawable?,
         errorDrawable: Drawable?
     ) {
-        GlideApp.with(imageView)
+        Glide.with(imageView)
             .load(url)
             .placeholder(placeholderDrawable)
             .error(errorDrawable)
@@ -967,10 +967,10 @@ object ImageLoader {
         imageView: ImageView,
         url: String?, roundingRadius: Int
     ) {
-        GlideApp.with(imageView)
+        Glide.with(imageView)
             .load(translateOssUrl(imageView, url))
             .apply(RequestOptions.bitmapTransform(RoundedCorners(roundingRadius)))
-            .error(GlideApp.with(imageView).load(url))
+            .error(Glide.with(imageView).load(url))
             .into(imageView)
     }
 
@@ -988,11 +988,11 @@ object ImageLoader {
         roundingRadius: Int,
         @DrawableRes placeholderId: Int
     ) {
-        GlideApp.with(imageView)
+        Glide.with(imageView)
             .load(translateOssUrl(imageView, url))
             .placeholder(placeholderId)
             .apply(RequestOptions.bitmapTransform(RoundedCorners(roundingRadius)))
-            .error(GlideApp.with(imageView).load(url))
+            .error(Glide.with(imageView).load(url))
             .into(imageView)
     }
 
@@ -1010,11 +1010,11 @@ object ImageLoader {
         roundingRadius: Int,
         placeholderDrawable: Drawable?
     ) {
-        GlideApp.with(imageView)
+        Glide.with(imageView)
             .load(translateOssUrl(imageView, url))
             .placeholder(placeholderDrawable)
             .apply(RequestOptions.bitmapTransform(RoundedCorners(roundingRadius)))
-            .error(GlideApp.with(imageView).load(url))
+            .error(Glide.with(imageView).load(url))
             .into(imageView)
     }
 
@@ -1034,11 +1034,11 @@ object ImageLoader {
         placeholderDrawable: Drawable?,
         errorDrawable: Drawable?
     ) {
-        GlideApp.with(imageView)
+        Glide.with(imageView)
             .load(translateOssUrl(imageView, url))
             .placeholder(placeholderDrawable)
             .apply(RequestOptions.bitmapTransform(RoundedCorners(roundingRadius)))
-            .error(GlideApp.with(imageView).load(url).error(errorDrawable))
+            .error(Glide.with(imageView).load(url).error(errorDrawable))
             .into(imageView)
     }
 
@@ -1054,7 +1054,7 @@ object ImageLoader {
         url: String?,
         roundingRadius: Int
     ) {
-        GlideApp.with(imageView)
+        Glide.with(imageView)
             .load(url)
             .transform(CenterCrop(), RoundedCorners(roundingRadius))
             .into(imageView)
@@ -1074,7 +1074,7 @@ object ImageLoader {
         roundingRadius: Int,
         @DrawableRes placeholderId: Int
     ) {
-        GlideApp.with(imageView)
+        Glide.with(imageView)
             .load(url)
             .placeholder(placeholderId)
             .transform(CenterCrop(), RoundedCorners(roundingRadius))
@@ -1095,7 +1095,7 @@ object ImageLoader {
         roundingRadius: Int,
         placeholderDrawable: Drawable?
     ) {
-        GlideApp.with(imageView)
+        Glide.with(imageView)
             .load(url)
             .placeholder(placeholderDrawable)
             .transform(CenterCrop(), RoundedCorners(roundingRadius))
@@ -1118,7 +1118,7 @@ object ImageLoader {
         placeholderDrawable: Drawable?,
         errorDrawable: Drawable?
     ) {
-        GlideApp.with(imageView)
+        Glide.with(imageView)
             .load(url)
             .placeholder(placeholderDrawable)
             .error(errorDrawable)
@@ -1138,10 +1138,10 @@ object ImageLoader {
         url: String?,
         roundingRadius: Int
     ) {
-        GlideApp.with(imageView)
+        Glide.with(imageView)
             .load(translateOssUrl(imageView, url))
             .transform(CenterCrop(), RoundedCorners(roundingRadius))
-            .error(GlideApp.with(imageView).load(url))
+            .error(Glide.with(imageView).load(url))
             .into(imageView)
     }
 
@@ -1159,11 +1159,11 @@ object ImageLoader {
         roundingRadius: Int,
         @DrawableRes placeholderId: Int
     ) {
-        GlideApp.with(imageView)
+        Glide.with(imageView)
             .load(translateOssUrl(imageView, url))
             .placeholder(placeholderId)
             .transform(CenterCrop(), RoundedCorners(roundingRadius))
-            .error(GlideApp.with(imageView).load(url))
+            .error(Glide.with(imageView).load(url))
             .into(imageView)
     }
 
@@ -1180,11 +1180,11 @@ object ImageLoader {
         url: String?, roundingRadius: Int,
         placeholderDrawable: Drawable?
     ) {
-        GlideApp.with(imageView)
+        Glide.with(imageView)
             .load(translateOssUrl(imageView, url))
             .placeholder(placeholderDrawable)
             .transform(CenterCrop(), RoundedCorners(roundingRadius))
-            .error(GlideApp.with(imageView).load(url))
+            .error(Glide.with(imageView).load(url))
             .into(imageView)
     }
 
@@ -1204,11 +1204,11 @@ object ImageLoader {
         placeholderDrawable: Drawable?,
         errorDrawable: Drawable?
     ) {
-        GlideApp.with(imageView)
+        Glide.with(imageView)
             .load(translateOssUrl(imageView, url))
             .placeholder(placeholderDrawable)
             .transform(CenterCrop(), RoundedCorners(roundingRadius))
-            .error(GlideApp.with(imageView).load(url).error(errorDrawable))
+            .error(Glide.with(imageView).load(url).error(errorDrawable))
             .into(imageView)
     }
 
@@ -1224,9 +1224,9 @@ object ImageLoader {
         radius: Int,
         sampling: Int
     ) {
-        GlideApp.with(imageView).load(url)
+        Glide.with(imageView).load(url)
             .transform(CenterCrop(), BlurTransformation(radius, sampling))
-            .error(GlideApp.with(imageView).load(url))
+            .error(Glide.with(imageView).load(url))
             .into(imageView)
     }
 
@@ -1244,10 +1244,10 @@ object ImageLoader {
         sampling: Int,
         @DrawableRes placeholderId: Int
     ) {
-        GlideApp.with(imageView).load(url)
+        Glide.with(imageView).load(url)
             .placeholder(placeholderId)
             .transform(CenterCrop(), BlurTransformation(radius, sampling))
-            .error(GlideApp.with(imageView).load(url))
+            .error(Glide.with(imageView).load(url))
             .into(imageView)
     }
 
@@ -1265,10 +1265,10 @@ object ImageLoader {
         sampling: Int,
         placeholderDrawable: Drawable?
     ) {
-        GlideApp.with(imageView).load(url)
+        Glide.with(imageView).load(url)
             .placeholder(placeholderDrawable)
             .transform(CenterCrop(), BlurTransformation(radius, sampling))
-            .error(GlideApp.with(imageView).load(url))
+            .error(Glide.with(imageView).load(url))
             .into(imageView)
     }
 
@@ -1288,10 +1288,10 @@ object ImageLoader {
         placeholderDrawable: Drawable?,
         errorDrawable: Drawable?
     ) {
-        GlideApp.with(imageView).load(url)
+        Glide.with(imageView).load(url)
             .placeholder(placeholderDrawable)
             .transform(CenterCrop(), BlurTransformation(radius, sampling))
-            .error(GlideApp.with(imageView).load(url).error(errorDrawable))
+            .error(Glide.with(imageView).load(url).error(errorDrawable))
             .into(imageView)
     }
 
@@ -1307,10 +1307,10 @@ object ImageLoader {
         radius: Int,
         sampling: Int
     ) {
-        GlideApp.with(imageView)
+        Glide.with(imageView)
             .load(translateOssUrl(imageView, url))
             .transform(CenterCrop(), BlurTransformation(radius, sampling))
-            .error(GlideApp.with(imageView).load(url))
+            .error(Glide.with(imageView).load(url))
             .into(imageView)
     }
 
@@ -1328,11 +1328,11 @@ object ImageLoader {
         sampling: Int,
         @DrawableRes placeholderId: Int
     ) {
-        GlideApp.with(imageView)
+        Glide.with(imageView)
             .load(translateOssUrl(imageView, url))
             .placeholder(placeholderId)
             .transform(CenterCrop(), BlurTransformation(radius, sampling))
-            .error(GlideApp.with(imageView).load(url))
+            .error(Glide.with(imageView).load(url))
             .into(imageView)
     }
 
@@ -1350,11 +1350,11 @@ object ImageLoader {
         sampling: Int,
         placeholderDrawable: Drawable?
     ) {
-        GlideApp.with(imageView)
+        Glide.with(imageView)
             .load(translateOssUrl(imageView, url))
             .placeholder(placeholderDrawable)
             .transform(CenterCrop(), BlurTransformation(radius, sampling))
-            .error(GlideApp.with(imageView).load(url))
+            .error(Glide.with(imageView).load(url))
             .into(imageView)
     }
 
@@ -1374,11 +1374,11 @@ object ImageLoader {
         placeholderDrawable: Drawable?,
         errorDrawable: Drawable?
     ) {
-        GlideApp.with(imageView)
+        Glide.with(imageView)
             .load(translateOssUrl(imageView, url))
             .placeholder(placeholderDrawable)
             .transform(CenterCrop(), BlurTransformation(radius, sampling))
-            .error(GlideApp.with(imageView).load(url).error(errorDrawable))
+            .error(Glide.with(imageView).load(url).error(errorDrawable))
             .into(imageView)
     }
 
@@ -1392,7 +1392,7 @@ object ImageLoader {
         imageView: ImageView,
         url: String?
     ) {
-        GlideApp.with(imageView)
+        Glide.with(imageView)
             .load(url + OSS_VIDEO_SNAPSHOT)
             .into(imageView)
     }
@@ -1407,7 +1407,7 @@ object ImageLoader {
         imageView: ImageView,
         url: String?
     ) {
-        GlideApp.with(imageView)
+        Glide.with(imageView)
             .load(
                 translateOssUrl(
                     imageView,
@@ -1427,7 +1427,7 @@ object ImageLoader {
         imageView: ImageView,
         url: String?
     ) {
-        GlideApp.with(imageView)
+        Glide.with(imageView)
             .load(url)
             .skipMemoryCache(false)
             .diskCacheStrategy(DiskCacheStrategy.NONE)
@@ -1446,7 +1446,7 @@ object ImageLoader {
         url: String?,
         @DrawableRes placeholderId: Int
     ) {
-        GlideApp.with(imageView)
+        Glide.with(imageView)
             .load(url)
             .placeholder(placeholderId)
             .skipMemoryCache(false)
@@ -1466,7 +1466,7 @@ object ImageLoader {
         url: String?,
         placeholderDrawable: Drawable?
     ) {
-        GlideApp.with(imageView)
+        Glide.with(imageView)
             .load(url)
             .placeholder(placeholderDrawable)
             .skipMemoryCache(false)
@@ -1488,7 +1488,7 @@ object ImageLoader {
         placeholderDrawable: Drawable?,
         errorDrawable: Drawable?
     ) {
-        GlideApp.with(imageView)
+        Glide.with(imageView)
             .load(url)
             .placeholder(placeholderDrawable)
             .error(errorDrawable)
@@ -1507,11 +1507,11 @@ object ImageLoader {
         imageView: ImageView,
         url: String?
     ) {
-        GlideApp.with(imageView)
+        Glide.with(imageView)
             .load(translateOssUrl(imageView, url))
             .skipMemoryCache(false)
             .diskCacheStrategy(DiskCacheStrategy.NONE)
-            .error(GlideApp.with(imageView).load(url))
+            .error(Glide.with(imageView).load(url))
             .into(imageView)
     }
 
@@ -1527,12 +1527,12 @@ object ImageLoader {
         url: String?,
         @DrawableRes placeholderId: Int
     ) {
-        GlideApp.with(imageView)
+        Glide.with(imageView)
             .load(translateOssUrl(imageView, url))
             .placeholder(placeholderId)
             .skipMemoryCache(false)
             .diskCacheStrategy(DiskCacheStrategy.NONE)
-            .error(GlideApp.with(imageView).load(url))
+            .error(Glide.with(imageView).load(url))
             .into(imageView)
     }
 
@@ -1548,12 +1548,12 @@ object ImageLoader {
         url: String?,
         placeholderDrawable: Drawable?
     ) {
-        GlideApp.with(imageView)
+        Glide.with(imageView)
             .load(translateOssUrl(imageView, url))
             .placeholder(placeholderDrawable)
             .skipMemoryCache(false)
             .diskCacheStrategy(DiskCacheStrategy.NONE)
-            .error(GlideApp.with(imageView).load(url))
+            .error(Glide.with(imageView).load(url))
             .into(imageView)
     }
 
@@ -1571,12 +1571,12 @@ object ImageLoader {
         placeholderDrawable: Drawable?,
         errorDrawable: Drawable?
     ) {
-        GlideApp.with(imageView)
+        Glide.with(imageView)
             .load(translateOssUrl(imageView, url))
             .placeholder(placeholderDrawable)
             .skipMemoryCache(false)
             .diskCacheStrategy(DiskCacheStrategy.NONE)
-            .error(GlideApp.with(imageView).load(url).error(errorDrawable))
+            .error(Glide.with(imageView).load(url).error(errorDrawable))
             .into(imageView)
     }
 
@@ -1586,7 +1586,7 @@ object ImageLoader {
      * @param context the context
      */
     fun clearDiskCache(context: Context) {
-        GlideApp.get(context).clearDiskCache()
+        Glide.get(context).clearDiskCache()
     }
 
     /**
@@ -1595,7 +1595,7 @@ object ImageLoader {
      * @param context the context
      */
     fun clearMemory(context: Context) {
-        GlideApp.get(context).clearMemory()
+        Glide.get(context).clearMemory()
     }
 
     private fun translateOssUrl(
