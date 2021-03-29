@@ -8,7 +8,7 @@ buildscript {
 
     repositories {
         google()
-        maven { url(aliyunMaven) }
+        gradlePluginPortal()
     }
     dependencies {
         classpath libs.androidGradlePlugin
@@ -25,8 +25,9 @@ buildscript {
 allprojects {
     repositories {
         google()
-        maven { url(aliyunMaven) }
-        maven { url(jitpackMaven) }
+        mavenCentral()
+        maven { url "https://maven.aliyun.com/repository/public" }
+        maven { url "https://jitpack.io"}
     }
 }
 

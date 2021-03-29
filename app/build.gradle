@@ -4,7 +4,7 @@ apply from: "${rootDir.path}/gradle/common.gradle"
 
 android {
     resourcePrefix prefix.app
-    defaultConfig.applicationId appPackageName
+    defaultConfig.applicationId "io.goooler.demoapp"
     signingConfigs {
         sign {
             keyAlias(SIGN_KEY_ALIAS)

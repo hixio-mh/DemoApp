@@ -3,14 +3,6 @@
  */
 
 ext {
-    // maven
-    aliyunMaven = "https://maven.aliyun.com/repository/public"
-    jitpackMaven = "https://jitpack.io"
-
-    // app
-    appVersionName = "1.0"
-    appPackageName = "io.goooler.demoapp"
-
     // app dependencies
     coreVersion = "1.3.2"
     appCompatVersion = "1.2.0"

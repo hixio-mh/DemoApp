@@ -8,7 +8,7 @@ android {
         minSdkVersion 21
         targetSdkVersion 30
         versionCode buildTime()
-        versionName appVersionName
+        versionName "1.0"
         vectorDrawables.useSupportLibrary true
         ndk { abiFilters "armeabi-v7a" }
     }
