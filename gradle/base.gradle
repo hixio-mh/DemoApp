@@ -29,6 +29,7 @@ dependencies {
     implementation libs.core
     implementation libs.appCompat
     implementation libs.annotation
+    implementation libs.activity
     implementation libs.fragment
     implementation libs.legacySupport
     implementation libs.preference
@@ -38,7 +39,6 @@ dependencies {
     implementation libs.recyclerView
     implementation libs.cardView
     implementation libs.lifecycle
-    implementation libs.navigation
 
     // UI
     implementation libs.smartRefreshLayout
