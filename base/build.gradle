@@ -56,18 +56,13 @@ dependencies {
 
     // trans
     api libs.objectBox
-    api libs.mmkv
     api libs.fastjson
     api libs.gson
 
     // async
     api libs.eventBus
     kapt libs.eventBusKapt
-    api libs.liveDataBus
     api libs.rx
-
-    // utils
-    api libs.luban
 
     // analyze
     debugApi libs.leakCanary

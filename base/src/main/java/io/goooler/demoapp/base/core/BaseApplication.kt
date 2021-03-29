@@ -2,7 +2,6 @@ package io.goooler.demoapp.base.core
 
 import android.annotation.SuppressLint
 import android.app.Application
-import com.tencent.mmkv.MMKV
 import io.goooler.demoapp.base.util.CrashHandler
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
@@ -26,7 +25,6 @@ abstract class BaseApplication : Application() {
     private fun initData() {
         context = this
         CrashHandler.init()
-        MMKV.initialize(this)
         GlobalScope.launch(Dispatchers.IO) {
             delay(2000)
             initLater()
