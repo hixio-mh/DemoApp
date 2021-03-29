@@ -42,8 +42,5 @@ tasks.withType(JavaCompile) {
 }
 
 task clean(type: Delete) {
-    rootProject.allprojects {
-        delete(it.buildDir)
-        delete(fileTree(dir: it.projectDir, include: cleanFileTypes))
-    }
+    delete rootProject.buildDir
 }

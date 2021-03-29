@@ -1,29 +1,13 @@
 apply plugin: "com.android.library"
-apply plugin: "kotlin-android"
-apply plugin: "kotlin-kapt"
+
+
+apply from: "${rootDir.path}/gradle/base.gradle"
 
 android {
-    compileSdkVersion appTargetSdk
-    buildToolsVersion appBuildTool
-    defaultConfig {
-        minSdkVersion appMinSdk
-        targetSdkVersion appTargetSdk
-        versionCode buildTime()
-        versionName appVersionName
-        vectorDrawables.useSupportLibrary true
-        versionNameSuffix suffix.base
-    }
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
-    kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_1_8
-    }
+    defaultConfig.versionNameSuffix suffix.base
 }
 
 dependencies {
-    api(fileTree(dir: libPath, include: libTypes))
     // official
     api libs.coroutines
     api libs.core

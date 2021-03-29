@@ -1,38 +1,14 @@
 apply plugin: "com.android.library"
-apply plugin: "kotlin-android"
-apply plugin: "kotlin-kapt"
 apply plugin: "com.google.protobuf"
+
+apply from: "${rootDir.path}/gradle/common.gradle"
 
 android {
     resourcePrefix prefix.main
-    compileSdkVersion appTargetSdk
-    buildToolsVersion appBuildTool
-    defaultConfig {
-        minSdkVersion appMinSdk
-        targetSdkVersion appTargetSdk
-        versionCode buildTime()
-        versionName appVersionName
-        vectorDrawables.useSupportLibrary true
-        versionNameSuffix suffix.main
-    }
-    flavorDimensions "channel"
-    productFlavors {
-        daily
-        online
-    }
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
-    kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_1_8
-    }
+    defaultConfig.versionNameSuffix suffix.main
 }
 
 kapt {
-    arguments {
-        arg("AROUTER_MODULE_NAME", project.getName())
-    }
     arguments {
         arg("objectbox.debug", true)
     }
@@ -60,6 +36,5 @@ dependencies {
     implementation libs.protobufLite
     implementation libs.moshi
 
-    kapt libs.arouterKapt
     kapt libs.objectBoxKapt
 }

@@ -7,11 +7,6 @@ ext {
     aliyunMaven = "https://maven.aliyun.com/repository/public"
     jitpackMaven = "https://jitpack.io"
 
-    // sdk
-    appTargetSdk = 30
-    appBuildTool = "30.0.3"
-    appMinSdk = 21
-
     // app
     appVersionName = "1.0"
     appPackageName = "io.goooler.demoapp"
@@ -61,10 +56,6 @@ ext {
     androidGradleVersion = "4.1.3"
     kotlinVersion = "1.4.32"
     protobufVersion = "0.8.12"
-
-    ndkLibs = ["armeabi-v7a"] as String[]
-    libPath = "libs"
-    libTypes = ["*.jar", "*.aar"]
 
     libs = [
             androidGradlePlugin: "com.android.tools.build:gradle:$androidGradleVersion",
