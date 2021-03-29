@@ -1,0 +1,26 @@
+apply plugin: "kotlin-android"
+apply plugin: "kotlin-kapt"
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 30
+        versionCode buildTime()
+        versionName appVersionName
+        vectorDrawables.useSupportLibrary true
+        ndk { abiFilters "armeabi-v7a" }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar", "*.aar"])
+}

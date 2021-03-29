@@ -1,0 +1,20 @@
+apply from: "${rootDir.path}/gradle/base.gradle"
+
+android {
+    flavorDimensions "channel"
+    productFlavors {
+        daily
+        online
+    }
+}
+
+kapt {
+    arguments {
+        arg("AROUTER_MODULE_NAME", project.getName())
+    }
+}
+
+dependencies {
+    implementation libs.arouter
+    kapt libs.arouterKapt
+}
