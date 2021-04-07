@@ -45,6 +45,8 @@ android {
 }
 
 dependencies {
+    implementation project(commonModule)
+
     coreLibraryDesugaring libs.desugar
     debugImplementation libs.leakCanary
 }

@@ -1,12 +1,6 @@
-apply plugin: "com.android.library"
-
-apply from: "${rootDir.path}/gradle/common.gradle"
+apply from: "${rootDir.path}/gradle/lib.gradle"
 
 android {
     resourcePrefix prefix.web
     defaultConfig.versionNameSuffix suffix.web
-}
-
-dependencies {
-    implementation project(commonModule)
 }

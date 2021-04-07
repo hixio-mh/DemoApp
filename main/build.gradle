@@ -1,7 +1,4 @@
-apply plugin: "com.android.library"
-apply plugin: "com.google.protobuf"
-
-apply from: "${rootDir.path}/gradle/common.gradle"
+apply from: "${rootDir.path}/gradle/lib.gradle"
 
 android {
     resourcePrefix prefix.main
@@ -14,6 +11,7 @@ kapt {
     }
 }
 
+apply plugin: "com.google.protobuf"
 protobuf {
     protoc {
         artifact = libs.protoc
@@ -30,7 +28,6 @@ protobuf {
 }
 
 dependencies {
-    implementation project(commonModule)
     implementation project(adapterModule)
 
     implementation libs.protobufLite

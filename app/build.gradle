@@ -5,7 +5,6 @@ android {
 }
 
 dependencies {
-    implementation project(commonModule)
     implementation project(loginModule)
     implementation project(mainModule)
     implementation project(webModule)
