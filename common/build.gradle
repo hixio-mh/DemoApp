@@ -12,8 +12,6 @@ android {
     defaultConfig.versionNameSuffix suffix.common
 
     productFlavors.all {
-        it.dimension "channel"
-        it.buildConfigField "String", "CHANNEL", "\"$name\""
         if (name == "daily") {
             it.buildConfigField "String", "API_HOST", "\"${apiHosts.daily}\""
         } else if (name == "online") {
