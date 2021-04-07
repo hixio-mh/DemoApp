@@ -1,6 +1,5 @@
 package io.goooler.demoapp.base.core
 
-import android.content.res.Resources
 import android.os.Bundle
 import android.view.WindowManager
 import androidx.annotation.IdRes
@@ -11,7 +10,6 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
 import androidx.lifecycle.ViewModelProvider
 import io.goooler.demoapp.base.util.DialogManager
-import io.goooler.demoapp.base.util.device.AdaptScreenUtil
 import io.goooler.demoapp.base.util.showToastInMainThread
 import io.goooler.demoapp.base.util.unsafeLazy
 
@@ -25,8 +23,6 @@ abstract class BaseActivity : AppCompatActivity() {
         lifecycle.addObserver(manager)
         manager
     }
-
-    protected val originalResources: Resources by unsafeLazy { super.getResources() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,10 +38,6 @@ abstract class BaseActivity : AppCompatActivity() {
         // activity 出栈 List<Activity> 移除
         ActivityCollector.removeActivity(this)
         super.onDestroy()
-    }
-
-    override fun getResources(): Resources {
-        return AdaptScreenUtil.adaptWidth(originalResources, 360)
     }
 
     /**
