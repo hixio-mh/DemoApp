@@ -5,8 +5,6 @@ apply from: "${rootDir.path}/gradle/common.gradle"
 android {
     resourcePrefix prefix.login
     defaultConfig.versionNameSuffix suffix.login
-
-
 }
 
 dependencies {

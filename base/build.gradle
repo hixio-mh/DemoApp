@@ -1,8 +1,8 @@
 apply plugin: "com.android.library"
 
-
 apply from: "${rootDir.path}/gradle/base.gradle"
 
 android {
+    resourcePrefix prefix.base
     defaultConfig.versionNameSuffix suffix.base
 }
