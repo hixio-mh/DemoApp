@@ -2,6 +2,11 @@ apply plugin: "com.android.library"
 
 apply from: "${rootDir.path}/gradle/common.gradle"
 
+def apiHosts = [
+        "daily" : "https://api.github.com/",
+        "online": "https://api.github.com/"
+]
+
 android {
     resourcePrefix prefix.common
     defaultConfig.versionNameSuffix suffix.common
@@ -10,9 +15,9 @@ android {
         it.dimension "channel"
         it.buildConfigField "String", "CHANNEL", "\"$name\""
         if (name == "daily") {
-            it.buildConfigField "String", "API_HOST", "\"${apiHosts[0]}\""
+            it.buildConfigField "String", "API_HOST", "\"${apiHosts.daily}\""
         } else if (name == "online") {
-            it.buildConfigField "String", "API_HOST", "\"${apiHosts[1]}\""
+            it.buildConfigField "String", "API_HOST", "\"${apiHosts.online}\""
         }
     }
 }

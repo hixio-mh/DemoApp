@@ -1,14 +1,17 @@
 apply plugin: "kotlin-android"
 apply plugin: "kotlin-kapt"
 
+def gitCommitCount = "git rev-list HEAD --count".execute().text.trim().toInteger()
+def gitCommitDescribe = "git describe --tags".execute().text.trim()
+
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.3"
     defaultConfig {
         minSdkVersion 21
         targetSdkVersion 30
-        versionCode buildTime()
-        versionName "1.0"
+        versionCode gitCommitCount
+        versionName gitCommitDescribe
         vectorDrawables.useSupportLibrary true
         ndk { abiFilters "armeabi-v7a" }
     }

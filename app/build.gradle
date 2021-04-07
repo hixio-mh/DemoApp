@@ -7,10 +7,10 @@ android {
     defaultConfig.applicationId "io.goooler.demoapp"
     signingConfigs {
         sign {
-            keyAlias(SIGN_KEY_ALIAS)
-            keyPassword(SIGN_KEY_PASSWORD)
-            storeFile file(SIGN_STORE_FILE)
-            storePassword(SIGN_STORE_PASSWORD)
+            keyAlias(SIGN_KEY_ALIAS.toString())
+            keyPassword(SIGN_KEY_PASSWORD.toString())
+            storeFile file(SIGN_STORE_FILE.toString())
+            storePassword(SIGN_STORE_PASSWORD.toString())
         }
     }
     buildTypes {

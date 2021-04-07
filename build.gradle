@@ -4,7 +4,6 @@ import java.util.concurrent.TimeUnit
 buildscript {
     apply from: "gradle/versions.gradle"
     apply from: "gradle/modules.gradle"
-    apply from: "gradle/config.gradle"
 
     repositories {
         google()
@@ -15,11 +14,6 @@ buildscript {
         classpath libs.kotlinPlugin
         classpath libs.protobufPlugin
     }
-
-    configurations.all {
-        // check for updates every build
-        resolutionStrategy.cacheChangingModulesFor(0, TimeUnit.SECONDS)
-    }
 }
 
 allprojects {
@@ -29,13 +23,13 @@ allprojects {
         maven { url "https://maven.aliyun.com/repository/public" }
         maven { url "https://jitpack.io"}
     }
-}
-
-/**
- * versionCode 限长 10 位
- */
-static def buildTime() {
-    return new Date().format("yyMMddHHmm").toInteger()
+    configurations.all {
+        // check for updates every build
+        resolutionStrategy {
+            cacheChangingModulesFor(0, TimeUnit.SECONDS)
+            cacheDynamicVersionsFor(0, TimeUnit.SECONDS)
+        }
+    }
 }
 
 tasks.withType(JavaCompile) {
