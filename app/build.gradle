@@ -1,59 +1,14 @@
-apply plugin: "com.android.application"
-
-apply from: "${rootDir.path}/gradle/common.gradle"
+apply from: "${rootDir.path}/gradle/app.gradle"
 
 android {
-    resourcePrefix prefix.app
     defaultConfig.applicationId "io.goooler.demoapp"
-    signingConfigs {
-        sign {
-            keyAlias(SIGN_KEY_ALIAS.toString())
-            keyPassword(SIGN_KEY_PASSWORD.toString())
-            storeFile file(SIGN_STORE_FILE.toString())
-            storePassword(SIGN_STORE_PASSWORD.toString())
-        }
-    }
-    buildTypes {
-        release {
-            signingConfig signingConfigs.sign
-            minifyEnabled true
-            zipAlignEnabled true
-            shrinkResources true
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
-        }
-        debug {
-            signingConfig signingConfigs.sign
-            jniDebuggable true
-            renderscriptDebuggable true
-            crunchPngs false
-            ext.alwaysUpdateBuildId = false
-        }
-    }
-    applicationVariants.all { variant ->
-        variant.outputs.all { output ->
-            if (output.outputFile != null && output.outputFile.name.endsWith('.apk')) {
-                outputFileName = "Demo_${variant.versionName}_${variant.versionCode}_${flavorName}_${variant.buildType.name}.apk"
-            }
-        }
-    }
-    lintOptions {
-        abortOnError false
-        checkReleaseBuilds false
-    }
-    compileOptions {
-        coreLibraryDesugaringEnabled true
-    }
 }
 
 dependencies {
-    coreLibraryDesugaring libs.desugar
-
     implementation project(commonModule)
     implementation project(loginModule)
     implementation project(mainModule)
     implementation project(webModule)
-
-    debugImplementation libs.leakCanary
 
     kapt libs.objectBoxKapt
 }
