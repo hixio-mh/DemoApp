@@ -3,47 +3,16 @@
  */
 
 ext {
-    // app dependencies
-    coreVersion = "1.3.2"
-    appCompatVersion = "1.2.0"
-    supportVersion = "1.0.0"
-    constraintLayoutVersion = "2.0.4"
-    activityVersion = "1.2.2"
-    fragmentVersion = "1.3.2"
-    materialVersion = "1.3.0"
-    flexBoxVersion = "2.0.1"
-    cardViewVersion = "1.0.0"
-    recyclerViewVersion = "1.2.0"
-    annotationVersion = "1.2.0"
     lifecycleVersion = "2.3.1"
-    navigationVersion = "2.3.1"
-    workVersion = "2.3.4"
-    preferenceVersion = "1.1.1"
     okHttpVersion = "4.9.1"
     retrofitVersion = "2.9.0"
-    fastjsonVersion = "1.1.72.android"
     arouterVersion = "1.5.1"
-    gsonVersion = "2.8.6"
-    moshiVersion = "1.12.0"
     eventBusVersion = "3.2.0"
-    rxAndroidVersion = "3.0.0"
-    rxJavaVersion = "3.0.12"
-    mpChartVersion = "v3.1.0"
-    lottieVersion = "3.5.0"
     smartRefreshLayoutVersion = "2.0.3"
     glideVersion = "4.12.0"
-    glideTransformationVersion = "4.3.0"
-    leakCanaryVersion = "2.7"
-    coroutinesVersion = "1.4.3"
-    desugarVersion = "1.1.5"
     objectBoxVersion = "2.9.1"
     protocVersion = "3.12.2"
-    tbsVersion = "43903"
-    baseRvHelperVersion = "3.0.4"
-    flycoTabLayoutVersion = "2.1.4.2"
-    utilsVersion = "1.30.6"
 
-    // buildScript plugin
     androidGradleVersion = "4.1.3"
     kotlinVersion = "1.4.32"
     protobufVersion = "0.8.12"
@@ -53,45 +22,43 @@ ext {
             kotlinPlugin       : "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion",
             protobufPlugin     : "com.google.protobuf:protobuf-gradle-plugin:$protobufVersion",
 
-            core               : "androidx.core:core-ktx:$coreVersion",
-            desugar            : "com.android.tools:desugar_jdk_libs:$desugarVersion",
-            appCompat          : "androidx.appcompat:appcompat:$appCompatVersion",
-            annotation         : "androidx.annotation:annotation:$annotationVersion",
-            activity           : "androidx.activity:activity-ktx:$activityVersion",
-            fragment           : "androidx.fragment:fragment-ktx:$fragmentVersion",
-            legacySupport      : "androidx.legacy:legacy-support-v4:$supportVersion",
-            preference         : "androidx.preference:preference:$preferenceVersion",
-            palette            : "androidx.palette:palette-ktx:$cardViewVersion",
-            constraintLayout   : "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion",
-            material           : "com.google.android.material:material:$materialVersion",
-            recyclerView       : "androidx.recyclerview:recyclerview:$recyclerViewVersion",
-            workManager        : "androidx.work:work-runtime-ktx:$workVersion",
-            flexBox            : "com.google.android:flexbox:$flexBoxVersion",
-            cardView           : "androidx.cardview:cardview:$cardViewVersion",
-            mpChart            : "com.github.PhilJay:MPAndroidChart:$mpChartVersion",
-            lottie             : "com.airbnb.android:lottie:$lottieVersion",
+            coroutines         : "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.3",
+            core               : "androidx.core:core-ktx:1.3.2",
+            desugar            : "com.android.tools:desugar_jdk_libs:1.1.5",
+            appCompat          : "androidx.appcompat:appcompat:1.2.0",
+            annotation         : "androidx.annotation:annotation:1.2.0",
+            activity           : "androidx.activity:activity-ktx:1.2.2",
+            fragment           : "androidx.fragment:fragment-ktx:1.3.2",
+            legacySupport      : "androidx.legacy:legacy-support-v4:1.0.0",
+            preference         : "androidx.preference:preference:1.1.1",
+            palette            : "androidx.palette:palette-ktx:1.0.0",
+            constraintLayout   : "androidx.constraintlayout:constraintlayout:2.0.4",
+            material           : "com.google.android.material:material:1.3.0",
+            recyclerView       : "androidx.recyclerview:recyclerview:1.2.0",
+            workManager        : "androidx.work:work-runtime-ktx:2.3.4",
+            flexBox            : "com.google.android:flexbox:2.0.1",
+            cardView           : "androidx.cardview:cardview:1.0.0",
+            mpChart            : "com.github.PhilJay:MPAndroidChart:v3.1.0",
+            lottie             : "com.airbnb.android:lottie:3.5.0",
             eventBus           : "org.greenrobot:eventbus:$eventBusVersion",
-            fastjson           : "com.alibaba:fastjson:$fastjsonVersion",
+            fastjson           : "com.alibaba:fastjson:1.1.72.android",
             arouter            : "com.alibaba:arouter-api:$arouterVersion",
-            moshi              : "com.squareup.moshi:moshi-kotlin:$moshiVersion",
-            leakCanary         : "com.squareup.leakcanary:leakcanary-android:$leakCanaryVersion",
+            moshi              : "com.squareup.moshi:moshi-kotlin:1.12.0",
+            leakCanary         : "com.squareup.leakcanary:leakcanary-android:2.7",
             protoc             : "com.google.protobuf:protoc:$protocVersion",
             protobufLite       : "com.google.protobuf:protobuf-javalite:$protocVersion",
-            tbs                : "com.tencent.tbs.tbssdk:sdk:$tbsVersion",
-            baseRvHelper       : "com.github.CymChad:BaseRecyclerViewAdapterHelper:$baseRvHelperVersion",
-            flycoTabLayout     : "com.github.ernestchang:flycotablayout:$flycoTabLayoutVersion",
-            utils              : "com.blankj:utilcodex:$utilsVersion",
+            tbs                : "com.tencent.tbs.tbssdk:sdk:43903",
+            baseRvHelper       : "com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4",
+            flycoTabLayout     : "com.github.ernestchang:flycotablayout:2.1.4.2",
+            utils              : "com.blankj:utilcodex:1.30.6",
             retrofit          : "com.squareup.retrofit2:retrofit:$retrofitVersion",
+            objectBox          : "io.objectbox:objectbox-android:$objectBoxVersion",
 
             glideKapt          : "com.github.bumptech.glide:compiler:$glideVersion",
             objectBoxKapt      : "io.objectbox:objectbox-processor:$objectBoxVersion",
             eventBusKapt       : "org.greenrobot:eventbus-annotation-processor:$eventBusVersion",
             arouterKapt        : "com.alibaba:arouter-compiler:$arouterVersion",
 
-            coroutines         : [
-                    "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion",
-                    "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion"
-            ],
             lifecycle          : [
                     "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVersion",
                     "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycleVersion",
@@ -108,21 +75,17 @@ ext {
                     "com.squareup.okhttp3:logging-interceptor:$okHttpVersion"
             ],
             gson               : [
-                    "com.google.code.gson:gson:$gsonVersion",
+                    "com.google.code.gson:gson:2.8.6",
                     "com.squareup.retrofit2:converter-gson:$retrofitVersion"
             ],
             glide              : [
                     "com.github.bumptech.glide:glide:$glideVersion",
                     "com.github.bumptech.glide:okhttp3-integration:$glideVersion",
-                    "jp.wasabeef:glide-transformations:$glideTransformationVersion"
-            ],
-            objectBox          : [
-                    "io.objectbox:objectbox-android:$objectBoxVersion",
-                    "io.objectbox:objectbox-kotlin:$objectBoxVersion"
+                    "jp.wasabeef:glide-transformations:4.3.0"
             ],
             rx                 : [
-                    "io.reactivex.rxjava3:rxjava:$rxJavaVersion",
-                    "io.reactivex.rxjava3:rxandroid:$rxAndroidVersion",
+                    "io.reactivex.rxjava3:rxjava:3.0.12",
+                    "io.reactivex.rxjava3:rxandroid:3.0.0",
                     "com.squareup.retrofit2:adapter-rxjava3:$retrofitVersion"
             ]
     ]
