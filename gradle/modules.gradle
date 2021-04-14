@@ -4,7 +4,7 @@ ext {
     loginModule = ":login"
     mainModule = ":main"
     adapterModule = ":adapter"
-    webModule = ":webview"
+    webModule = ":web"
 
     prefix = [
             app    : "app_",
