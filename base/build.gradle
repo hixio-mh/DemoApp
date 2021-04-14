@@ -6,3 +6,34 @@ android {
     resourcePrefix prefix.base
     defaultConfig.versionNameSuffix suffix.base
 }
+
+dependencies {
+    api fileTree(dir: "libs", include: ["*.jar", "*.aar"])
+
+    // official
+    api libs.coroutines
+    api libs.core
+    api libs.appCompat
+    api libs.annotation
+    api libs.activity
+    api libs.fragment
+    api libs.constraintLayout
+    api libs.recyclerView
+    api libs.lifecycle
+
+    // UI
+    api libs.smartRefreshLayout
+
+    // network
+    api libs.tbs
+    api libs.okHttp
+    api libs.retrofit
+    api libs.glide
+
+    // trans
+    api libs.fastjson
+    api libs.gson
+
+    // async
+    api libs.rx
+}

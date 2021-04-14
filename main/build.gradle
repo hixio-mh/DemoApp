@@ -5,12 +5,6 @@ android {
     defaultConfig.versionNameSuffix suffix.main
 }
 
-kapt {
-    arguments {
-        arg("objectbox.debug", true)
-    }
-}
-
 apply plugin: "com.google.protobuf"
 protobuf {
     protoc {
@@ -31,7 +25,4 @@ dependencies {
     implementation project(adapterModule)
 
     implementation libs.protobufLite
-    implementation libs.moshi
-
-    kapt libs.objectBoxKapt
 }

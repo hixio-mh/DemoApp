@@ -2,10 +2,8 @@ package io.goooler.demoapp
 
 import com.tencent.smtt.export.external.TbsCoreSettings
 import com.tencent.smtt.sdk.QbSdk
-import io.goooler.demoapp.base.util.ObjectBox
 import io.goooler.demoapp.common.RouterApplication
 import io.goooler.demoapp.common.util.isFirstRun
-import io.goooler.demoapp.main.bean.MyObjectBox
 
 
 class DemoApplication : RouterApplication() {
@@ -14,11 +12,6 @@ class DemoApplication : RouterApplication() {
         super.onCreate()
 
         QbSdk.initX5Environment(this, null)
-        ObjectBox.init {
-            MyObjectBox.builder()
-                .androidContext(this)
-                .build()
-        }
     }
 
     override fun initLater() {

@@ -35,10 +35,6 @@ android {
             }
         }
     }
-    lintOptions {
-        abortOnError false
-        checkReleaseBuilds false
-    }
     compileOptions {
         coreLibraryDesugaringEnabled true
     }

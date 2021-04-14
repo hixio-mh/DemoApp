@@ -8,6 +8,4 @@ dependencies {
     implementation project(loginModule)
     implementation project(mainModule)
     implementation project(webModule)
-
-    kapt libs.objectBoxKapt
 }

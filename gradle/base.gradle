@@ -15,52 +15,13 @@ android {
         vectorDrawables.useSupportLibrary true
         ndk { abiFilters "armeabi-v7a" }
     }
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
     kotlinOptions {
+        useIR = true
         jvmTarget = JavaVersion.VERSION_1_8
+        freeCompilerArgs = ["-Xjvm-default=compatibility"]
     }
-}
-
-dependencies {
-    implementation fileTree(dir: "libs", include: ["*.jar", "*.aar"])
-
-    // official
-    implementation libs.coroutines
-    implementation libs.core
-    implementation libs.appCompat
-    implementation libs.annotation
-    implementation libs.activity
-    implementation libs.fragment
-    implementation libs.legacySupport
-    implementation libs.preference
-    implementation libs.palette
-    implementation libs.constraintLayout
-    implementation libs.material
-    implementation libs.recyclerView
-    implementation libs.cardView
-    implementation libs.lifecycle
-
-    // UI
-    implementation libs.smartRefreshLayout
-    implementation libs.mpChart
-    implementation libs.lottie
-    implementation libs.flycoTabLayout
-    implementation libs.baseRvHelper
-
-    // network
-    implementation libs.tbs
-    implementation libs.okHttp
-    implementation libs.retrofit
-    implementation libs.glide
-
-    // trans
-    implementation libs.objectBox
-    implementation libs.fastjson
-    implementation libs.gson
-
-    // async
-    implementation libs.rx
+    lintOptions {
+        abortOnError false
+        checkReleaseBuilds false
+    }
 }

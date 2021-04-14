@@ -13,7 +13,7 @@ ext {
     objectBoxVersion = "2.9.1"
     protocVersion = "3.12.2"
 
-    androidGradleVersion = "4.1.3"
+    androidGradleVersion = "4.2.0-rc01"
     kotlinVersion = "1.4.32"
     protobufVersion = "0.8.12"
 
