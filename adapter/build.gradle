@@ -8,5 +8,5 @@ android {
 }
 
 dependencies {
-    implementation project(baseModule)
+    api libs.recyclerView
 }

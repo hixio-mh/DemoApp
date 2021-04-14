@@ -15,8 +15,10 @@ kapt {
 }
 
 dependencies {
-    implementation libs.eventBus
-    kapt libs.eventBusKapt
+    implementation project(baseModule)
+
+    implementation libs.smartRefreshLayout
+    implementation libs.rx
 
     implementation libs.arouter
     kapt libs.arouterKapt

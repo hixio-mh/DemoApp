@@ -21,5 +21,6 @@ android {
 }
 
 dependencies {
-    api project(baseModule)
+    implementation libs.glide
+    implementation libs.gson
 }

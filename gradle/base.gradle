@@ -25,3 +25,7 @@ android {
         checkReleaseBuilds false
     }
 }
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar", "*.aar"])
+}
