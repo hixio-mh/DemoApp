@@ -21,10 +21,10 @@ allprojects {
         google()
         mavenCentral()
         maven { url "https://maven.aliyun.com/repository/public" }
-        maven { url "https://jitpack.io"}
+        maven { url "https://jitpack.io" }
     }
+
     configurations.all {
-        // check for updates every build
         resolutionStrategy {
             cacheChangingModulesFor(0, TimeUnit.SECONDS)
             cacheDynamicVersionsFor(0, TimeUnit.SECONDS)
