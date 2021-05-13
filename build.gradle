@@ -14,15 +14,11 @@ buildscript {
         classpath libs.kotlinPlugin
         classpath libs.protobufPlugin
         classpath libs.kotlinterPlugin
-        classpath libs.dependencyUpdatesPlugin
     }
 }
 
 allprojects {
-    apply {
-        plugin "com.github.ben-manes.versions"
-        plugin "org.jmailen.kotlinter"
-    }
+    apply plugin: "org.jmailen.kotlinter"
 
     repositories {
         google()
@@ -39,22 +35,10 @@ allprojects {
     }
 }
 
-tasks.named("dependencyUpdates").configure {
-    rejectVersionIf {
-        isNonStable(it.candidate.version)
-    }
-}
-
-tasks.withType(JavaCompile) {
+tasks.withType(JavaCompile).configureEach {
     options.encoding = StandardCharsets.UTF_8
 }
 
 task clean(type: Delete) {
     delete rootProject.buildDir
-}
-
-static def isNonStable(String version) {
-    def stableKeyword = ['RELEASE', 'FINAL', 'GA'].any { it -> version.toUpperCase().contains(it) }
-    def regex = /^[0-9,.v-]+(-r)?$/
-    return !stableKeyword && !(version ==~ regex)
 }
