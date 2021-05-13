@@ -7,13 +7,13 @@ ext {
     smartRefreshLayoutVersion = "2.0.3"
     glideVersion = "4.12.0"
     objectBoxVersion = "2.9.1"
-    protocVersion = "3.15.8"
+    protocVersion = "3.17.0"
 
     libs = [
-            androidGradlePlugin    : "com.android.tools.build:gradle:4.2.0-rc01",
-            kotlinPlugin           : "org.jetbrains.kotlin:kotlin-gradle-plugin:1.4.32",
-            protobufPlugin         : "com.google.protobuf:protobuf-gradle-plugin:0.8.15",
-            kotlinterPlugin        : "org.jmailen.gradle:kotlinter-gradle:3.4.0",
+            androidGradlePlugin    : "com.android.tools.build:gradle:4.2.0",
+            kotlinPlugin           : "org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.0",
+            protobufPlugin         : "com.google.protobuf:protobuf-gradle-plugin:0.8.16",
+            kotlinterPlugin        : "org.jmailen.gradle:kotlinter-gradle:3.4.4",
             dependencyUpdatesPlugin: "com.github.ben-manes:gradle-versions-plugin:0.38.0",
 
             coroutines             : "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.3",
@@ -21,8 +21,8 @@ ext {
             desugar                : "com.android.tools:desugar_jdk_libs:1.1.5",
             appCompat              : "androidx.appcompat:appcompat:1.2.0",
             annotation             : "androidx.annotation:annotation:1.2.0",
-            activity               : "androidx.activity:activity-ktx:1.2.2",
-            fragment               : "androidx.fragment:fragment-ktx:1.3.2",
+            activity               : "androidx.activity:activity-ktx:1.2.3",
+            fragment               : "androidx.fragment:fragment-ktx:1.3.3",
             legacySupport          : "androidx.legacy:legacy-support-v4:1.0.0",
             preference             : "androidx.preference:preference:1.1.1",
             palette                : "androidx.palette:palette-ktx:1.0.0",
