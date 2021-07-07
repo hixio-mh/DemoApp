@@ -16,16 +16,36 @@ android {
         ndk { abiFilters "armeabi-v7a" }
     }
     kotlinOptions {
-        useIR = true
-        jvmTarget = JavaVersion.VERSION_1_8
-        freeCompilerArgs = ["-Xjvm-default=compatibility"]
+        freeCompilerArgs = ["-Xjvm-default=all"]
     }
     lintOptions {
-        abortOnError false
-        checkReleaseBuilds false
+        abortOnError true
+        checkReleaseBuilds true
     }
+    packagingOptions.resources.excludes += [
+            "**/*.proto",
+            "**/*.bin",
+            "**/*.java",
+            "**/*.properties",
+            "**/*.version",
+            "**/*.*_module",
+            "*.txt",
+            "META-INF/services/**",
+            "META-INF/com/**",
+            "META-INF/licenses/**",
+            "META-INF/AL2.0",
+            "META-INF/LGPL2.1",
+            "com/**",
+            "kotlin/**",
+            "kotlinx/**",
+            "okhttp3/**",
+            "google/**"
+    ]
 }
 
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar", "*.aar"])
+
+    testImplementation libs.tests
+    androidTestImplementation libs.androidTests
 }

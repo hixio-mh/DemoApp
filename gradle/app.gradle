@@ -3,20 +3,10 @@ apply plugin: "com.android.application"
 apply from: "${rootDir.path}/gradle/common.gradle"
 
 android {
-    signingConfigs {
-        sign {
-            keyAlias(SIGN_KEY_ALIAS.toString())
-            keyPassword(SIGN_KEY_PASSWORD.toString())
-            storeFile file(SIGN_STORE_FILE.toString())
-            storePassword(SIGN_STORE_PASSWORD.toString())
-        }
-    }
     buildTypes {
         release {
             signingConfig signingConfigs.sign
             minifyEnabled true
-            zipAlignEnabled true
-            shrinkResources true
             proguardFiles "${rootDir.path}/gradle/proguard-rules.pro"
         }
         debug {
@@ -24,24 +14,17 @@ android {
             jniDebuggable true
             renderscriptDebuggable true
             crunchPngs false
-            ext.alwaysUpdateBuildId = false
         }
     }
     applicationVariants.all { variant ->
-        variant.outputs.all { output ->
-            if (output.outputFile != null && output.outputFile.name.endsWith('.apk')) {
-                outputFileName = "Demo_${variant.versionName}_${variant.versionCode}_${flavorName}_${variant.buildType.name}.apk"
-            }
+        variant.outputs.all {
+            outputFileName = "../../../app_${variant.versionName}_${variant.versionCode}_${flavorName}_${variant.buildType.name}.apk"
         }
-    }
-    compileOptions {
-        coreLibraryDesugaringEnabled true
     }
 }
 
 dependencies {
     implementation project(commonModule)
 
-    coreLibraryDesugaring libs.desugar
     debugImplementation libs.leakCanary
 }

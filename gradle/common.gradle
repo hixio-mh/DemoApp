@@ -6,6 +6,14 @@ android {
         daily
         online
     }
+    signingConfigs {
+        sign {
+            keyAlias SIGN_KEY_ALIAS
+            keyPassword SIGN_KEY_PASSWORD
+            storeFile file(SIGN_STORE_FILE)
+            storePassword SIGN_STORE_PASSWORD
+        }
+    }
 }
 
 kapt {
