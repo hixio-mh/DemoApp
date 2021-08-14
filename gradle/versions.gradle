@@ -10,20 +10,20 @@ ext {
     protocVersion = "3.17.3"
 
     libs = [
-            androidPlugin     : "com.android.tools.build:gradle:4.2.2",
-            kotlinPlugin      : "org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.20",
-            protobufPlugin    : "com.google.protobuf:protobuf-gradle-plugin:0.8.16",
-            kotlinterPlugin   : "org.jmailen.gradle:kotlinter-gradle:3.4.5",
+            androidPlugin     : "com.android.tools.build:gradle:7.0.0",
+            kotlinPlugin      : "org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.21",
+            protobufPlugin    : "com.google.protobuf:protobuf-gradle-plugin:0.8.17",
+            kotlinterPlugin   : "org.jmailen.gradle:kotlinter-gradle:3.5.0",
 
-            coroutines        : "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.0",
+            coroutines        : "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.1",
             core              : "androidx.core:core-ktx:1.6.0",
-            appCompat         : "androidx.appcompat:appcompat:1.3.0",
+            appCompat         : "androidx.appcompat:appcompat:1.3.1",
             annotation        : "androidx.annotation:annotation:1.2.0",
-            activity          : "androidx.activity:activity-ktx:1.2.3",
-            fragment          : "androidx.fragment:fragment-ktx:1.3.5",
+            activity          : "androidx.activity:activity-ktx:1.3.1",
+            fragment          : "androidx.fragment:fragment-ktx:1.3.6",
             preference        : "androidx.preference:preference:1.1.1",
             palette           : "androidx.palette:palette-ktx:1.0.0",
-            constraintLayout  : "androidx.constraintlayout:constraintlayout:2.0.4",
+            constraintLayout  : "androidx.constraintlayout:constraintlayout:2.1.0",
             material          : "com.google.android.material:material:1.3.0",
             recyclerView      : "androidx.recyclerview:recyclerview:1.2.1",
             workManager       : "androidx.work:work-runtime-ktx:2.3.4",
@@ -75,7 +75,7 @@ ext {
                     "jp.wasabeef:glide-transformations:4.3.0"
             ],
             rx                : [
-                    "io.reactivex.rxjava3:rxjava:3.0.13",
+                    "io.reactivex.rxjava3:rxjava:3.1.0",
                     "io.reactivex.rxjava3:rxandroid:3.0.0",
                     "com.squareup.retrofit2:adapter-rxjava3:$retrofitVersion"
             ],
