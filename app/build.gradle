@@ -1,4 +1,4 @@
-apply from: "${rootDir.path}/gradle/app.gradle"
+apply from: "$rootDir/gradle/app.gradle"
 
 android {
     defaultConfig.applicationId "io.goooler.demoapp"

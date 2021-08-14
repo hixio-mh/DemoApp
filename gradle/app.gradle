@@ -1,16 +1,31 @@
 apply plugin: "com.android.application"
 
-apply from: "${rootDir.path}/gradle/common.gradle"
+apply from: "$rootDir/gradle/common.gradle"
+
+def gitCommitCount = "git rev-list HEAD --count".execute().text.trim().toInteger()
+def gitCommitDescribe = "git describe --tags".execute().text.trim()
 
 android {
+    defaultConfig {
+        versionCode gitCommitCount
+        versionName gitCommitDescribe
+    }
+    signingConfigs {
+        release {
+            keyAlias SIGN_KEY_ALIAS
+            keyPassword SIGN_KEY_PASSWORD
+            storeFile file(SIGN_STORE_FILE)
+            storePassword SIGN_STORE_PASSWORD
+        }
+    }
     buildTypes {
         release {
-            signingConfig signingConfigs.sign
+            signingConfig signingConfigs.release
             minifyEnabled true
-            proguardFiles "${rootDir.path}/gradle/proguard-rules.pro"
+            proguardFiles "$rootDir/gradle/proguard-rules.pro"
         }
         debug {
-            signingConfig signingConfigs.sign
+            signingConfig signingConfigs.release
             jniDebuggable true
             renderscriptDebuggable true
             crunchPngs false

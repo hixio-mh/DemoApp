@@ -35,8 +35,12 @@ allprojects {
     }
 }
 
-tasks.withType(JavaCompile).configureEach {
+tasks.withType(JavaCompile) {
     options.encoding = StandardCharsets.UTF_8
+}
+
+tasks.wrapper {
+    distributionType = Wrapper.DistributionType.ALL
 }
 
 task clean(type: Delete) {

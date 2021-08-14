@@ -1,4 +1,4 @@
-apply from: "${rootDir.path}/gradle/lib.gradle"
+apply from: "$rootDir/gradle/lib.gradle"
 
 android {
     resourcePrefix prefix.web

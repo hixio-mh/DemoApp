@@ -1,22 +1,23 @@
 apply plugin: "kotlin-android"
 apply plugin: "kotlin-kapt"
 
-def gitCommitCount = "git rev-list HEAD --count".execute().text.trim().toInteger()
-def gitCommitDescribe = "git describe --tags".execute().text.trim()
-
 android {
-    compileSdkVersion 30
-    buildToolsVersion "30.0.3"
+    compileSdk 31
+    buildToolsVersion "31.0.0"
     defaultConfig {
-        minSdkVersion 21
-        targetSdkVersion 30
-        versionCode gitCommitCount
-        versionName gitCommitDescribe
+        minSdk 21
+        targetSdk 31
         vectorDrawables.useSupportLibrary true
         ndk { abiFilters "armeabi-v7a" }
     }
     kotlinOptions {
-        freeCompilerArgs = ["-Xjvm-default=all"]
+        freeCompilerArgs = [
+                "-progressive",
+                "-Xjvm-default=all",
+                "-Xno-call-assertions",
+                "-Xno-param-assertions",
+                "-Xno-receiver-assertions"
+        ]
     }
     lintOptions {
         abortOnError true
