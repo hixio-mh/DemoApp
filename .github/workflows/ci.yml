@@ -13,7 +13,7 @@ jobs:
         with:
           distribution: 'adopt'
           java-version: 11
-      - uses: actions/cache@v2
+      - uses: actions/cache@v3.0.11
         with:
           path: ~/.gradle/caches
           key: gradle-${{ runner.os }}-${{ hashFiles('**/**.gradle.kts', '**/gradle/wrapper/gradle-wrapper.properties', '**/buildSrc/src/main/kotlin/**.kt') }}
@@ -32,7 +32,7 @@ jobs:
         with:
           distribution: 'adopt'
           java-version: 11
-      - uses: actions/cache@v2
+      - uses: actions/cache@v3.0.11
         with:
           path: ~/.gradle/caches
           key: gradle-${{ runner.os }}-${{ hashFiles('**/**.gradle.kts', '**/gradle/wrapper/gradle-wrapper.properties', '**/buildSrc/src/main/kotlin/**.kt') }}
@@ -54,7 +54,7 @@ jobs:
         with:
           distribution: 'adopt'
           java-version: 11
-      - uses: actions/cache@v2
+      - uses: actions/cache@v3.0.11
         with:
           path: ~/.gradle/caches
           key: gradle-${{ runner.os }}-${{ hashFiles('**/**.gradle.kts', '**/gradle/wrapper/gradle-wrapper.properties', '**/buildSrc/src/main/kotlin/**.kt') }}
@@ -74,7 +74,7 @@ jobs:
         with:
           distribution: 'adopt'
           java-version: 11
-      - uses: actions/cache@v2
+      - uses: actions/cache@v3.0.11
         with:
           path: ~/.gradle/caches
           key: gradle-${{ runner.os }}-${{ hashFiles('**/**.gradle.kts', '**/gradle/wrapper/gradle-wrapper.properties', '**/buildSrc/src/main/kotlin/**.kt') }}
